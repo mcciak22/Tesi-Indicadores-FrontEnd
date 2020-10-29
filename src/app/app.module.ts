@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './main/pages/authentication/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule    
+    BrowserAnimationsModule,
+    MatSliderModule,
+    ReactiveFormsModule,
+    FormsModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
