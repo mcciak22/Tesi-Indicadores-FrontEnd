@@ -1,0 +1,24 @@
+<div class="file-drop-area">
+    <span class="fake-btn">choose a file</span>
+     <span class="file-msg">{{  file ? file.name:"Selec file" }}</span>
+    <input class="file-input" (change)="onFileChange($event)" type="file" miltiple="false">
+</div>
+
+
+<!-- <input type="file" (change)="onFileChange($event)" multiple="false" /> -->
+
+<table>
+    <tbody>
+        <tr *ngFor="let row of data1">
+            <ng-container *ngIf="row !== 1">
+                <mat-checkbox
+                    (change)="$event.checked" [checked]="checked">
+                </mat-checkbox>
+            </ng-container>
+            <td *ngFor="let cell of row">
+                
+                {{cell}}
+            </td>
+        </tr>
+    </tbody>
+</table>
