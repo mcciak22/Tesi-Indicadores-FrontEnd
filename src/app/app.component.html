@@ -1,3 +1,47 @@
 <ng-container>
-    <app-file-upload></app-file-upload>
+    <app-file-upload (change)="onFileChange($event)"></app-file-upload>
 </ng-container>
+
+    <button mat-button (click)="seleccionarTodo()">Seleccionar todos</button>
+
+    <button mat-button (click)="Quitartodo()">Deseleccionar todos</button>
+
+    <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa generica</button>
+
+    <button mat-button>Calcular Sumativa</button>
+
+<ng-container *ngIf="data !== undefined">
+    <table>
+        <thead>
+         
+            <tr *ngFor="let row of data2">
+                <td *ngFor="let cell of row">
+                    {{cell}}
+                </td>
+            </tr>
+            
+        </thead>       
+        <tbody>
+            <tr *ngFor="let row of data1">
+                               
+                
+                
+                <td *ngFor="let cell of row">
+                    {{cell}}
+                    
+               
+                </td>
+                <mat-checkbox (change)="$event.checked ? agregar(row) : quitar(row)"
+                    [checked]="checked">
+                </mat-checkbox>
+                   
+
+            </tr>
+          
+        </tbody>
+    </table>
+</ng-container>
+<ng-container *ngFor="let item of rows">
+    {{item}}
+</ng-container>
+
