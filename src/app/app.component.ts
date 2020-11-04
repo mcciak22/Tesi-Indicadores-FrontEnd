@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   checked=false;
   Filas = [];
   rows=[];
+  valuesgenerics: any[];
   ngOnInit(): void {
    
   }
@@ -60,21 +61,29 @@ export class AppComponent implements OnInit {
     
   }
   CalculoSumaGenerica(){
-    console.log(this.Filas);
-     let valuesgenerics=[];
+   // console.log(this.Filas);
+    
+   let valuerow=[];
     this.Filas.forEach(element => {
-     console.log(element);
-     let valuerow=[];
-     for (let index = 3; index < element.length; index++) {
+     //console.log(element);
+     let value= []
+     for (let index = 2; index < element.length; index++) {
        const row = element[index];
-       valuerow.push(row)       
+       value.push(row)       
       
     }
-    valuesgenerics.push(valuerow)
-     console.log(valuesgenerics);
+    //valuesgenerics.push(valuerow)
+    valuerow.push(value);
+    
+  });
+  this.valuesgenerics = valuerow;
+      // this.valuesgenerics.forEach(element => {
+      //   console.log(element);
+        
+    // });
+    console.log(this.valuesgenerics);
      
      
-    });
   //  for (let index = 1; index < valuesgenerics.length; index+=2) {
   //    const element = valuesgenerics[index];
   //    console.log(element);
