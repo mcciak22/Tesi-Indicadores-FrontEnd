@@ -6,9 +6,9 @@
 
     <button mat-button (click)="Quitartodo()">Deseleccionar todos</button>
 
-    <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa generica</button>
+    <!-- <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa generica</button> -->
 
-    <button mat-button>Calcular Sumativa</button>
+    <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa</button>
 
 <ng-container *ngIf="data !== undefined">
     <table>

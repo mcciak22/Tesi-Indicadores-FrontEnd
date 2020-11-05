@@ -19,6 +19,7 @@ export class AppComponent implements OnInit {
   suma: number;
   result: any[];
   tablafinal: any[];
+  result2: any[];
   ngOnInit(): void {
 
   }
@@ -107,19 +108,27 @@ export class AppComponent implements OnInit {
       let total = element.reduce((a, b) => a + b, 0);
        this.result.push(total)     
    });
+   this.result2=[]
+   this.valuesgenerics.forEach(element => {
+    let total = element.reduce((a, b) => a + b, 0);
+     this.result2.push(total);
+   });
   //  console.log(this.result);
   //  this.Filas.forEach(element => {
   //    element.total = this.result.forEach(element => {return element})
      
   //  });
-  //  console.log(this.Filas);
+  //console.log(this.valuesgenerics);
    
    this.tablafinal = [];
+
 
    for (let index = 0; index < this.Filas.length; index++) {
      const element1 = this.Filas[index];
      const element2 = this.result[index];
-     element1.push(element2)
+     const element3 = this.result2[index];
+     element1.push('Sumativa generica'+' '+element2)
+     element1.push('Sumativa'+' '+element3)
      
      //console.log(element2);
      
