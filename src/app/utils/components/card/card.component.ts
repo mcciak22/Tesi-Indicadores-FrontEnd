@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-
+  urlImage: string =  './assets/images/Tesilogo.jpg';;
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

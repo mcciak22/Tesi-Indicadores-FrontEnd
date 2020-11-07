@@ -7,6 +7,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  //icons svg for fontawesone
   faCoffee = faCoffee;
   constructor() { }
 
