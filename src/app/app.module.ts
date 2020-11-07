@@ -10,7 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { FileUploadComponent } from './utils/components/file-upload/file-upload.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { NavbarComponent } from './utils/components/navbar/navbar.component';
+import { NavbarComponent } from './utils/components/toolbar/navbar.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatRippleModule} from '@angular/material/core';
 
