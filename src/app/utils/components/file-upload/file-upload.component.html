@@ -1,22 +1,18 @@
 <div class="file-drop-area">
     <span class="fake-btn">choose a file</span>
      <span class="file-msg">{{  file ? file.name:"Selec file" }}</span>
-    <input class="file-input" type="file" miltiple="false">
+    <input class="file-input" (change)="onFileChange($event)" type="file" miltiple="false">
 </div>
 
-
-<!-- <input type="file" (change)="onFileChange($event)" multiple="false" /> -->
-
-
-<ng-container>
+<!-- <ng-container>
     <app-file-upload (change)="onFileChange($event)"></app-file-upload>
-</ng-container>
+</ng-container> -->
 
     <button mat-button (click)="seleccionarTodo()">Seleccionar todos</button>
 
     <button mat-button (click)="Quitartodo()">Deseleccionar todos</button>
 
-    <!-- <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa generica</button> -->
+    
 
     <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa</button>
 

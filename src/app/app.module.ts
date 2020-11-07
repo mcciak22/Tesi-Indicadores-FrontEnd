@@ -18,7 +18,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { FooterComponent } from './utils/components/footer/footer.component';
-
+import { RouterModule, Routes } from '@angular/router';
+// const routes: Routes = [
+//   { path: '**', component: FileUploadComponent }
+//   ];
 
 @NgModule({
   declarations: [
@@ -27,6 +30,7 @@ import { FooterComponent } from './utils/components/footer/footer.component';
     FileUploadComponent, ToolbarComponent, CardComponent, FooterComponent
   ],
   imports: [
+    //RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
