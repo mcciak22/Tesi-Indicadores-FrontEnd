@@ -27,7 +27,12 @@
       </mat-error>
     </mat-form-field>
     <br>
-    <button mat-raised-button>Login</button>
+    <button matRipple
+    [matRippleCentered]="centered"
+    [matRippleDisabled]="disabled"
+    [matRippleUnbounded]="unbounded"
+    [matRippleRadius]="radius"
+    [matRippleColor]="color">Login</button>
   </form>
 </ng-container>
 

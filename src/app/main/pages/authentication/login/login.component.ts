@@ -19,7 +19,12 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   hide = true;
   matcher = new MyErrorStateMatcher();
+  centered = false;
+  disabled = false;
+  unbounded = false;
 
+  radius: number;
+  color: string;
   constructor(  
     private _formBuilder: FormBuilder
     ) 
