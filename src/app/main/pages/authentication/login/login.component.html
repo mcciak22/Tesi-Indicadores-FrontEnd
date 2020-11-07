@@ -1,38 +1,52 @@
-<ng-container>
-  <h1>Bienvenidos Ala Plataforma de Indicadores</h1>
-  <h1>TECNOLOGICO DE ESTUDIOS SUPERIORES DE IXTAPALUCA</h1>
-</ng-container>
-<ng-container>
-  <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="InicioDeSesion()">
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your email</mat-label>
-      <input matInput formControlName="email">      
-      <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
-        Please enter a valid email address
-      </mat-error>
-      <mat-error *ngIf="loginForm.get('email').hasError('required')">
-        Email is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br>
-    <mat-form-field appearance="fill">
-      <mat-label>Enter your password</mat-label>
-      <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
-      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide">
-        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-      <mat-error>
-        Password is <strong>required</strong>
-      </mat-error>
-    </mat-form-field>
-    <br>
-    <button matRipple
-    [matRippleCentered]="centered"
-    [matRippleDisabled]="disabled"
-    [matRippleUnbounded]="unbounded"
-    [matRippleRadius]="radius"
-    [matRippleColor]="color">Login</button>
-  </form>
-</ng-container>
+<div class="content"> 
+  <mat-card class="mat-elevation-z8">
+      <!-- <mat-card-header>
+          <mat-card-title>Himalayan Peaks</mat-card-title>
+      </mat-card-header> -->
+      <!-- <img mat-card-image src="{{urlImage}}" /> -->
+      <!-- <mat-card-content>
+          <p>
+              Plataforma del Tecnologico de Estudios Superiores de Ixtapaluca Encargada de llevar a cabo Indicadores de Cacei para la 
+              probabilidad y estadisticas de los indices de aprobacion, resprobacion, rezago, desercion escolar.
+          </p>
+      </mat-card-content> -->
+      <!-- <mat-card-actions>
+          <button mat-button>LIKE</button> <button mat-button>SHARE</button>
+      </mat-card-actions> -->
+
+      <ng-container>
+        <h1>Bienvenidos Ala Plataforma de Indicadores</h1>
+        <h1>TECNOLOGICO DE ESTUDIOS SUPERIORES DE IXTAPALUCA</h1>
+      </ng-container>
+      <ng-container>
+        <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="InicioDeSesion()">
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your email</mat-label>
+            <input matInput formControlName="email">      
+            <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error *ngIf="loginForm.get('email').hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error>
+              Password is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <br>
+          <button matRipple mat-button>Login</button>
+        </form>
+      </ng-container>
+  </mat-card>
+</div> 
+
 

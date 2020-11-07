@@ -17,13 +17,14 @@ import { CardComponent } from './utils/components/card/card.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import {FlexLayoutModule} from "@angular/flex-layout";
+import { FooterComponent } from './utils/components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    FileUploadComponent, ToolbarComponent, CardComponent
+    FileUploadComponent, ToolbarComponent, CardComponent, FooterComponent
   ],
   imports: [
     BrowserModule,
