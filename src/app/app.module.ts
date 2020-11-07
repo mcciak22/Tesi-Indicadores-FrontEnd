@@ -9,17 +9,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FileUploadComponent } from './utils/components/file-upload/file-upload.component';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatRippleModule } from '@angular/material/core';
+import { MatCardModule } from "@angular/material/card";
 import { ToolbarComponent } from './utils/components/toolbar/toolbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CardComponent } from './utils/components/card/card.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRippleModule } from '@angular/material/core';
+import {FlexLayoutModule} from "@angular/flex-layout";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    FileUploadComponent, ToolbarComponent
+    FileUploadComponent, ToolbarComponent, CardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatCheckboxModule,
     MatToolbarModule,
     MatRippleModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatCardModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
