@@ -8,13 +8,13 @@
     <app-file-upload (change)="onFileChange($event)"></app-file-upload>
 </ng-container> -->
 
-    <button mat-button (click)="seleccionarTodo()">Seleccionar todos</button>
+    <!-- <button mat-button (click)="seleccionarTodo()">Seleccionar todos</button>
 
     <button mat-button (click)="Quitartodo()">Deseleccionar todos</button>
 
     
 
-    <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa</button>
+    <button mat-button (click)="CalculoSumaGenerica()">Calcular Sumativa</button> -->
 
 <ng-container *ngIf="data !== undefined">
     <table>
@@ -37,9 +37,9 @@
                     
                
                 </td>
-                <mat-checkbox (change)="$event.checked ? agregar(row) : quitar(row)"
+                <!-- <mat-checkbox (change)="$event.checked ? agregar(row) : quitar(row)"
                     [checked]="checked">
-                </mat-checkbox>
+                </mat-checkbox> -->
                    
 
             </tr>
