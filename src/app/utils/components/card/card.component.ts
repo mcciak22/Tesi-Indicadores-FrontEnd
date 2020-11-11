@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  urlImage: string =  './assets/images/Tesilogo.jpg';;
+  //el input se puede para que la etiqueta de app-card se reciban propiedades. recibir datos desde otros componentes.
+  @Input() urlImage: string;
   constructor() { }
 
   ngOnInit(): void {

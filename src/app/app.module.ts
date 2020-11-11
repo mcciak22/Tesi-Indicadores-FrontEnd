@@ -19,7 +19,8 @@ import { MatRippleModule } from '@angular/material/core';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { FooterComponent } from './utils/components/footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import { appRoutingProviders, routing } from './app-routing.module';
+import { DashboardComponent } from './main/pages/dashboard/dashboard.component';
 // const routes: Routes = [
 //   { path: '**', component: FileUploadComponent }
 //   ];
@@ -31,7 +32,8 @@ import { AppRoutingModule } from './app-routing.module';
     FileUploadComponent, 
     ToolbarComponent, 
     CardComponent, 
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
   ],
   imports: [
     //RouterModule.forRoot(routes),
@@ -49,9 +51,12 @@ import { AppRoutingModule } from './app-routing.module';
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
-    AppRoutingModule
+    routing
+    
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

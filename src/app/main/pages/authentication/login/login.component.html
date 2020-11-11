@@ -8,29 +8,29 @@
       <ng-container>
         <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="InicioDeSesion()">
           <mat-form-field appearance="fill">
-            <mat-label>Enter your email</mat-label>
+            <mat-label>Ingresa tu Email</mat-label>
             <input matInput formControlName="email">      
             <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
-              Please enter a valid email address
+              Por Favor Ingresa El Email Correctamente.
             </mat-error>
             <mat-error *ngIf="loginForm.get('email').hasError('required')">
-              Email is <strong>required</strong>
+              El Email Es <strong>Requerido</strong>
             </mat-error>
           </mat-form-field>
           <br>
           <mat-form-field appearance="fill">
-            <mat-label>Enter your password</mat-label>
+            <mat-label>Ingresa Tu Contraseña</mat-label>
             <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
               [attr.aria-pressed]="hide">
               <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error>
-              Password is <strong>required</strong>
+              La Contraseña Es <strong>Requerida</strong>
             </mat-error>
           </mat-form-field>
           <br>
-          <button matRipple mat-button [routerLink]="[ 'forgotpassword']">Login</button>
+          <button matRipple mat-button [routerLink]="[ 'dashboard']">Login</button>
         </form>
       </ng-container>
   </mat-card>
