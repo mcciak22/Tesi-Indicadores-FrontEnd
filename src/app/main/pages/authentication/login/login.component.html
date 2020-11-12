@@ -1,39 +1,64 @@
-<div class="content"> 
-  <mat-card class="mat-elevation-z8">
+
+
+<div fxLayout="row" fxLayoutGap="10">
+
+    <app-card fxFlex="100%" [urlImage]="'./assets/images/Tesilogo.jpg'"></app-card>
+
+
+    <!-- <mat-card class="mat-elevation-z8" fxFlex="100%">
+
+        <mat-card-content>
+            <h1>
+                Plataforma del Tecnologico de Estudios Superiores de Ixtapaluca Encargada de llevar a cabo
+                Indicadores de Cacei para la
+                probabilidad y estadisticas de los indices de aprobacion, resprobacion, rezago, desercion escolar.
+            </h1>
+        </mat-card-content>
+
+    </mat-card> -->
+
+
+
+    <!-- <app-login fxFlex="30%"></app-login> -->
+    <div class="content" fxLayout="column" fxLayoutAlign="center center"> 
+      <mat-card class="mat-elevation-z8">
+        
+          <ng-container >
+            <h1>Inicio de Sesion</h1>
+            
+          </ng-container>
+          <ng-container>
+            <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="InicioDeSesion()">
+              <mat-form-field appearance="fill">
+                <mat-label>Ingresa tu Email</mat-label>
+                <input matInput formControlName="email">   
+                <mat-icon matSuffix >mail</mat-icon>
     
-      <ng-container>
-        <h1>Bienvenidos Indicadores</h1>
-        <h1>TECNOLOGICO DE ESTUDIOS SUPERIORES DE IXTAPALUCA</h1>
-      </ng-container>
-      <ng-container>
-        <form name="loginForm" [formGroup]="loginForm" (ngSubmit)="InicioDeSesion()">
-          <mat-form-field appearance="fill">
-            <mat-label>Ingresa tu Email</mat-label>
-            <input matInput formControlName="email">      
-            <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
-              Por Favor Ingresa El Email Correctamente.
-            </mat-error>
-            <mat-error *ngIf="loginForm.get('email').hasError('required')">
-              El Email Es <strong>Requerido</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <mat-form-field appearance="fill">
-            <mat-label>Ingresa Tu Contraseña</mat-label>
-            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-error>
-              La Contraseña Es <strong>Requerida</strong>
-            </mat-error>
-          </mat-form-field>
-          <br>
-          <button matRipple mat-button [routerLink]="[ 'dashboard']">Login</button>
-        </form>
-      </ng-container>
-  </mat-card>
-</div> 
+                <mat-error *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+                  Por Favor Ingresa El Email Correctamente.
+                </mat-error>
+                <mat-error *ngIf="loginForm.get('email').hasError('required')">
+                  El Email Es <strong>Requerido</strong>
+                </mat-error>
+              </mat-form-field>
+              <br>
+              <mat-form-field appearance="fill">
+                <mat-label>Ingresa Tu Contraseña</mat-label>
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-error>
+                  La Contraseña Es <strong>Requerida</strong>
+                </mat-error>
+              </mat-form-field>
+              <br>
+              <button matRipple mat-button [routerLink]="[ 'dashboard']">Login</button>
+            </form>
+          </ng-container>
+      </mat-card>
+    </div> 
+</div>
 
 

@@ -18,8 +18,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRippleModule } from '@angular/material/core';
 import {FlexLayoutModule} from "@angular/flex-layout";
 import { FooterComponent } from './utils/components/footer/footer.component';
-import { RouterModule, Routes } from '@angular/router';
-import { appRoutingProviders, routing } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './main/pages/dashboard/dashboard.component';
 // const routes: Routes = [
 //   { path: '**', component: FileUploadComponent }
@@ -51,11 +50,11 @@ import { DashboardComponent } from './main/pages/dashboard/dashboard.component';
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
-    routing
+    AppRoutingModule
     
   ],
   providers: [
-    appRoutingProviders,
+    
   ],
   bootstrap: [AppComponent]
 })
