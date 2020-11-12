@@ -8,4 +8,13 @@
   h1{
     text-align: center;
   }
-
+  .content1 { 
+    padding: 16px; 
+  }
+  
+  .content1 > mat-card { 
+    width: auto; 
+  }
+  .tamaño{
+    width: 200px;
+  }
