@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
+
+
 
 @Component({
   selector: 'app-toolbar',
@@ -8,10 +11,24 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class ToolbarComponent implements OnInit {
   //icons svg for fontawesone
+ 
+   valorevnto:string = '';
   faCoffee = faCoffee;
+  titulopagina="Bienvenidos a la plataforma de Calculo de Indicadores Cacei"
   constructor() { }
 
   ngOnInit(): void {
+        
   }
+  verEvento(evento){
+    this.valorevnto = evento;
+    
+
+  }
+  changeFn($event){
+    console.log($event);
+    
+  }
+
 
 }

@@ -20,6 +20,8 @@ import {FlexLayoutModule} from "@angular/flex-layout";
 import { FooterComponent } from './utils/components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './main/pages/dashboard/dashboard.component';
+import { UtilsModule } from './utils/utils.module';
+import { PagesModule } from './main/pages.module';
 // const routes: Routes = [
 //   { path: '**', component: FileUploadComponent }
 //   ];
@@ -50,6 +52,8 @@ import { DashboardComponent } from './main/pages/dashboard/dashboard.component';
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
+    UtilsModule,
+    PagesModule,
     AppRoutingModule
     
   ],
