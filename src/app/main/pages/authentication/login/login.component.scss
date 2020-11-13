@@ -3,7 +3,7 @@
   }
   
   .content > mat-card { 
-    width: auto; 
+    max-width: 750px; 
   }
   h1{
     text-align: center;
@@ -13,7 +13,7 @@
   }
   
   .content1 > mat-card { 
-    width: auto; 
+    max-width: 609px;; 
   }
   .tamaño{
     width: 200px;

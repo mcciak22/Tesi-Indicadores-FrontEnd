@@ -1,26 +1,32 @@
+
+
 <div fxLayout="row" fxLayoutGap="10">
 
-  <app-card fxFlex="42%" [urlImage]="'./assets/images/Tesilogo.jpg'"></app-card>
-
-
-  <div class="content1" fxFlex="20%">
-    <mat-card class="mat-elevation-z8 " fxLayoutAlign="center center" >
-      <img mat-card-image src="./assets/images/Tesilogo.jpg" /> 
-      <mat-card-content>
-        
-        <h1>
-          Plataforma del Tecnologico de Estudios Superiores de Ixtapaluca Encargada de llevar a cabo
-          Indicadores de Cacei para la
-          probabilidad y estadisticas de los indices de aprobacion, resprobacion, rezago, desercion escolar.
-        </h1>
-      </mat-card-content>
-
+  <div class="content" flFlex="42%">
+    <mat-card class="mat-elevation-z8">
+        <!-- <mat-card-header>
+                <mat-card-title>Himalayan Peaks</mat-card-title>
+            </mat-card-header> -->
+        <img mat-card-image src="./assets/images/Tesilogo.jpg">        
+        <!-- <mat-card-content>
+            <h1>
+                Plataforma del Tecnologico de Estudios Superiores de Ixtapaluca Encargada de llevar a cabo
+                Indicadores de Cacei para la
+                probabilidad y estadisticas de los indices de aprobacion, resprobacion, rezago, desercion escolar.
+            </h1>
+        </mat-card-content> -->
+        <!-- <mat-card-actions>
+                <button mat-button>LIKE</button> <button mat-button>SHARE</button>
+            </mat-card-actions> -->
     </mat-card>
-  </div>
-  <!-- <div class="content">
+   
+    
+</div>
+  
+ <div class="content1">
     <mat-card class="mat-elevation-z8">
         
-        <img style="width: 60%; height: 20%;" mat-card-image src="./assets/images/Cacei.png" />        
+        <img mat-card-image src="./assets/images/Cacei.jpg" />        
         <mat-card-content>
             <h1>
                 Plataforma del Tecnologico de Estudios Superiores de Ixtapaluca Encargada de llevar a cabo
@@ -71,7 +77,7 @@
             </mat-error>
           </mat-form-field>
           <br>
-          <button matRipple mat-button [routerLink]="[ 'dashboard']">Login</button>
+          <button matRipple mat-button (click)="InicioDeSesion()">Login</button>
         </form>
       </ng-container>
     </mat-card>

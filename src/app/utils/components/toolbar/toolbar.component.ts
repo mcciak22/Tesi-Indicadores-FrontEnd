@@ -1,5 +1,6 @@
 import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { NameService } from 'src/app/core/_services/servicio-cambionombre/name.service';
 
 
 
@@ -15,20 +16,19 @@ export class ToolbarComponent implements OnInit {
    valorevnto:string = '';
   faCoffee = faCoffee;
   titulopagina="Bienvenidos a la plataforma de Calculo de Indicadores Cacei"
-  constructor() { }
+  constructor(
+    public nameService:NameService
+  )
+  {
+
+    this.nameService.titulopagina = this.titulopagina;
+
+
+  }
 
   ngOnInit(): void {
         
   }
-  verEvento(evento){
-    this.valorevnto = evento;
-    
-
-  }
-  changeFn($event){
-    console.log($event);
-    
-  }
-
+  
 
 }
