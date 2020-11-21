@@ -19,19 +19,16 @@ import { UtilsModule } from '../utils/utils.module';
 import { MenuPrincipalComponent } from './pages/menuprincipal/menuprincipal.component';
 import { utils } from 'protractor';
 
-
-
 @NgModule({
   declarations: [
     MenuPrincipalComponent,
     LoginComponent,
     ForgotpasswordComponent,
-   
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    BrowserAnimationsModule,   
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
@@ -43,12 +40,8 @@ import { utils } from 'protractor';
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
-    UtilsModule
+    UtilsModule,
   ],
-  exports: [   
-    MenuPrincipalComponent,
-    LoginComponent,
-    ForgotpasswordComponent
-  ]
+  exports: [MenuPrincipalComponent, LoginComponent, ForgotpasswordComponent],
 })
-export class PagesModule { }
+export class PagesModule {}
