@@ -6,6 +6,7 @@ import { UsuariosService } from '../../../core/services/servicio-usuarios/usuari
   selector: 'app-menuprincipal',
   templateUrl: './menuprincipal.component.html',
   styleUrls: ['./menuprincipal.component.scss'],
+  providers: [UsuariosService],
 })
 export class MenuPrincipalComponent implements OnInit {
   @Output() EmitirEvento: EventEmitter<any> = new EventEmitter();

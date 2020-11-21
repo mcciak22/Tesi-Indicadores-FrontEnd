@@ -1,4 +1,13 @@
-export interface Usuario {
+export class UsuariosModel{
+    ok: boolean;
+    usuarios: Usuario[];
+}
+export interface UsuarioModel{
+    ok: boolean;
+    usuario: Usuario;
+}
+
+interface Usuario{
     id_uduario: number;
     Nombre: string;
     Apellidos: string;
