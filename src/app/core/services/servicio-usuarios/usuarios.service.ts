@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { from, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AppParametersService } from '../servicio-parametros/app-parameters.service';
 import { UsuariosModel, UsuarioModel } from '../../models/modelos-usuario/usuariosmodel';
 import { Usuario } from '../../models/modelos-usuario/usuariomodel';

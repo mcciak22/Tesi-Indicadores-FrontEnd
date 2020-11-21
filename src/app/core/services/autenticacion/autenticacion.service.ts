@@ -18,7 +18,8 @@ export class AutenticacionService {
   Autenticacion(login: Login): Observable<Token> {
     const header = this.appParametersService.vHeadersRequest;
     return this.http.post<Token>(  this.appParametersService.ApiServicesUrl + 'api/auth',
-      login
+      login,
+      {headers: header}
     );
   }
 }
