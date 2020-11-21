@@ -13,7 +13,7 @@ export class UsuariosService {
     private appParametersService: AppParametersService
 
   ) { }
-  ObtenerTodosLosUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(this.appParametersService.ApiServicesUrl + 'api/usuarios');
+  ObtenerTodosLosUsuarios(): Observable<any> {
+    return this.http.get<any>(this.appParametersService.ApiServicesUrl + 'api/usuarios');
   }
 }

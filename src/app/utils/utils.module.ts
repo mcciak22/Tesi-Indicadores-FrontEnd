@@ -17,18 +17,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-
 @NgModule({
   declarations: [
     CardComponent,
     FileUploadComponent,
     FooterComponent,
-    ToolbarComponent
+    ToolbarComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
-    BrowserAnimationsModule,   
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
@@ -45,7 +44,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CardComponent,
     FileUploadComponent,
     FooterComponent,
-    ToolbarComponent
-  ]
+    ToolbarComponent,
+  ],
 })
-export class UtilsModule { }
+export class UtilsModule {}
