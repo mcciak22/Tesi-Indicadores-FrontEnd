@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UtilsModule } from 'src/app/utils/utils.module';
+import { HttpClientModule } from '@angular/common/http/index';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { UtilsModule } from 'src/app/utils/utils.module';
     MatRippleModule,
     FontAwesomeModule,   
     FlexLayoutModule,
+    HttpClientModule,
     UtilsModule
   ]
 })

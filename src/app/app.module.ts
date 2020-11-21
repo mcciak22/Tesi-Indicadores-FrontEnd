@@ -8,12 +8,13 @@ import { UtilsModule } from './utils/utils.module';
 import { PagesModule } from './main/pages.module';
 import { UsuariosService } from './core/services/servicio-usuarios/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatDialogComponent } from './src/utils/components/mat-dialog/mat-dialog.component';
 // const routes: Routes = [
 //   { path: '**', component: FileUploadComponent }
 //   ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MatDialogComponent],
   imports: [
     // RouterModule.forRoot(routes),
     BrowserModule,

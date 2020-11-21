@@ -9,6 +9,7 @@ import {
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { Router } from '@angular/router';
+import { AutenticacionService } from 'src/app/core/services/autenticacion/autenticacion.service';
 import { NameService } from 'src/app/core/services/servicio-cambionombre/name.service';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -46,19 +47,33 @@ export class LoginComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private nameService: NameService
+    private nameService: NameService,
+    private authService: AutenticacionService
   ) {
     this.nameService.titulopagina = this.tituloPagina;
   }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      Email: ['', [Validators.required, Validators.email]],
+      Password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   InicioDeSesion(): void {
-    this.router.navigate(['/app-menuprincipal']);
+    //console.log(this.loginForm.value);
+    this.authService.Autenticacion(this.loginForm.value).subscribe(
+    (data: any)=>{
+      console.log(data);
+      
+    },
+    (error: any)=>{
+      console.log(error);
+      
+
+    }
+    )
+    
+    // this.router.navigate(['/app-menuprincipal']);
   }
 }
