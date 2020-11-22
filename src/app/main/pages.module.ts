@@ -19,12 +19,18 @@ import { UtilsModule } from '../utils/utils.module';
 import { MenuPrincipalComponent } from './pages/menuprincipal/menuprincipal.component';
 import { utils } from 'protractor';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { RegistroUsuariosComponent } from './pages/registro-usuarios/registro-usuarios.component';
+import { RegistroMaestrosComponent } from './pages/registro-maestros/registro-maestros.component';
+import { RegistroAlumnosComponent } from './pages/registro-alumnos/registro-alumnos.component';
 
 @NgModule({
   declarations: [
     MenuPrincipalComponent,
     LoginComponent,
     ForgotpasswordComponent,
+    RegistroUsuariosComponent,
+    RegistroMaestrosComponent,
+    RegistroAlumnosComponent,
   ],
   imports: [
     CommonModule,
