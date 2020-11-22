@@ -43,7 +43,7 @@ export class AutenticacionService {
     // Expira en segundos
      const expiresAt = moment().add(authResult, 'second');
      localStorage.setItem('Usuario', JSON.stringify({Id: this.sessioUser.id, NombreCompleto: this.sessioUser.Nombre + ' ' + this.sessioUser.Apellidos, 
-     Email: this.sessioUser.Email, Rol: this.sessioUser.Rol, Exp: this.sessioUser.exp, Iat:this.sessioUser.iat }));
+     Email: this.sessioUser.Email, Rol: this.sessioUser.Rol}));
      localStorage.setItem('Token', authResult);
      localStorage.setItem('Expiracion', JSON.stringify(expiresAt.valueOf()));
     
