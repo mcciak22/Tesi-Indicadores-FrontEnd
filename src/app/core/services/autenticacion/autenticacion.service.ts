@@ -38,10 +38,12 @@ export class AutenticacionService {
     // Almacena el nombre de usuario y el token jwt en el almacenamiento local para mantener al usuario conectado entre actualizaciones de página
  
     this.sessioUser = jwt_decode(authResult)
-    console.log(this.sessioUser);
+    //console.log(this.sessioUser);
     
     // Expira en segundos
-     const expiresAt = moment().add(authResult, 'second');
+     const expiresAt = moment().add(this.sessioUser.exp, 'second');
+     console.log(expiresAt);
+     
      localStorage.setItem('Usuario', JSON.stringify({Id: this.sessioUser.id, NombreCompleto: this.sessioUser.Nombre + ' ' + this.sessioUser.Apellidos, 
      Email: this.sessioUser.Email, Rol: this.sessioUser.Rol}));
      localStorage.setItem('Token', authResult);
@@ -58,6 +60,8 @@ export class AutenticacionService {
   }
   // Metodo esta conectado
   public isLoggedIn(): boolean {
+    console.log(moment().isBefore(this.getExpiration()));
+    
     return moment().isBefore(this.getExpiration());
   }
   // Metodo est� desconectado
@@ -69,7 +73,7 @@ export class AutenticacionService {
   getExpiration(): object {
     const expiration = localStorage.getItem('Expiracion');
     const expiresAt = JSON.parse(expiration);
-    // console.log(typeof (moment(expiresAt)));
+    // console.log(moment(expiresAt));
     return moment(expiresAt);
   }
 }

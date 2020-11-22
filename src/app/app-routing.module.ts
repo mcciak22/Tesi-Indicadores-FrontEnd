@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { from } from 'rxjs';
 import { LoginComponent } from './main/pages/authentication/login/login.component';
 import { MenuPrincipalComponent } from './main/pages/menuprincipal/menuprincipal.component';
+import { AuthGuard } from './core/guards/auth.guard'
+
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'menuprincipal', component: MenuPrincipalComponent },
+  { path: 'menuprincipal', component: MenuPrincipalComponent, canActivate: [AuthGuard]},
   { path: '**', component: LoginComponent },
 ];
 
