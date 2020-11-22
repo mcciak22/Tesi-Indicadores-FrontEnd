@@ -8,9 +8,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AutenticacionService } from 'src/app/core/services/autenticacion/autenticacion.service';
 import { NameService } from 'src/app/core/services/servicio-cambionombre/name.service';
+import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -48,7 +50,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private nameService: NameService,
-    private authService: AutenticacionService
+    private authService: AutenticacionService,
+    public dialog: MatDialog
   ) {
     this.nameService.titulopagina = this.tituloPagina;
   }
@@ -64,11 +67,27 @@ export class LoginComponent implements OnInit {
     //console.log(this.loginForm.value);
     this.authService.Autenticacion(this.loginForm.value).subscribe(
     (data: any)=>{
-      console.log(data);
-      
+      //console.log(data.Token);
+      const data1 = {
+        mensajemenu: 'Bienvenido al Menu Principal',
+        mensajecontenido:'Sigue los pasos que se te indican en la plataforma'
+      }
+      const ref = this.dialog.open(MatDialogComponent,{data:data1})
+     this.authService.setSession(data.Token)
+
+      this.router.navigate(['/app-menuprincipal']);
     },
     (error: any)=>{
-      console.log(error);
+
+      const data = {
+        mensajemenu: error.error.error,
+        mensajecontenido:'Verifica el Usario es Correcto'
+      }
+      //console.log(data);
+      
+      const ref = this.dialog.open(MatDialogComponent,{data:data})
+
+      //console.log(error);
       
 
     }

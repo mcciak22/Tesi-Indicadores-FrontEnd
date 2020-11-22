@@ -15,11 +15,13 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UtilsModule } from 'src/app/utils/utils.module';
 import { HttpClientModule } from '@angular/common/http/index';
+import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
 
 
 @NgModule({
   declarations: [
-    LoginComponent
+    LoginComponent,
+    MatDialogComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,9 @@ import { HttpClientModule } from '@angular/common/http/index';
     FlexLayoutModule,
     HttpClientModule,
     UtilsModule
+  ],
+  entryComponents:[
+    MatDialogComponent
   ]
 })
 export class LoginModule { }

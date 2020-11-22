@@ -20,7 +20,7 @@ export class MenuPrincipalComponent implements OnInit {
   }
   ngOnInit(): void {
     this.usuarioService.ObtenerTodosLosUsuarios().subscribe((data: any) => {
-      console.log(data);
+     // console.log(data);
     });
   }
 }
