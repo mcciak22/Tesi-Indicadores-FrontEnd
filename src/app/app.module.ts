@@ -9,6 +9,7 @@ import { PagesModule } from './main/pages.module';
 import { UsuariosService } from './core/services/servicio-usuarios/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
+import { CommonModule } from '@angular/common';
 
 // const routes: Routes = [
 //   { path: '**', component: FileUploadComponent }
@@ -18,6 +19,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   declarations: [AppComponent],
   imports: [
     // RouterModule.forRoot(routes),
+    CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatDialogModule,

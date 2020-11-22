@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NameService {
   titulopagina: string = '';
-  constructor() { }
+  usuario: boolean = false;
+  constructor() {}
 }

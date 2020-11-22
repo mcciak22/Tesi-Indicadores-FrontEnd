@@ -15,11 +15,18 @@ import { NameService } from 'src/app/core/services/servicio-cambionombre/name.se
 })
 export class ToolbarComponent implements OnInit {
   // icons svg for fontawesone
+  // usuario: any = localStorage.getItem('Usuario');
   faCoffee = faCoffee;
   titulopagina = 'Bienvenidos a la plataforma de Calculo de Indicadores Cacei';
+  
   constructor(public nameService: NameService) {
     this.nameService.titulopagina = this.titulopagina;
+   
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.usuario);
+    
+  }
+
 }

@@ -1,0 +1,20 @@
+.botonera {
+    display: flex;
+    justify-content: space-between;
+  
+    width: 100%;
+  }
+  
+  /* Apariencia de los botones */ 
+  .boton {
+      justify-self: end;
+    padding: 10px;
+    border: 0;
+    background: red;
+    font-size: 1.2em;
+    color: #FFF;
+  }
+  
+  .boton-atras {
+    text-decoration: none;
+  }
