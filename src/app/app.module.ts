@@ -6,7 +6,6 @@ import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
 import { UtilsModule } from './utils/utils.module';
 import { PagesModule } from './main/pages.module';
-import { UsuariosService } from './core/services/servicio-usuarios/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CommonModule } from '@angular/common';

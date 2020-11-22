@@ -75,7 +75,7 @@ export class LoginComponent implements OnInit {
       const ref = this.dialog.open(MatDialogComponent,{data:data1})
      this.authService.setSession(data.Token)
 
-      this.router.navigate(['/app-menuprincipal']);
+      this.router.navigate(['/menuprincipal']);
     },
     (error: any)=>{
 

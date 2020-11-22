@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { UtilsModule } from '../utils/utils.module';
 import { MenuPrincipalComponent } from './pages/menuprincipal/menuprincipal.component';
 import { utils } from 'protractor';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { utils } from 'protractor';
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
+    MatGridListModule,
     MatButtonModule,
     FormsModule,
     MatCheckboxModule,
