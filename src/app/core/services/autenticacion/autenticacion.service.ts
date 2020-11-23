@@ -42,7 +42,7 @@ export class AutenticacionService {
     
     // Expira en segundos
      const expiresAt = moment().add(this.sessioUser.exp, 'second');
-     console.log(expiresAt);
+     // console.log(expiresAt);
      
      localStorage.setItem('Usuario', JSON.stringify({Id: this.sessioUser.id, NombreCompleto: this.sessioUser.Nombre + ' ' + this.sessioUser.Apellidos, 
      Email: this.sessioUser.Email, Rol: this.sessioUser.Rol}));
@@ -60,7 +60,7 @@ export class AutenticacionService {
   }
   // Metodo esta conectado
   public isLoggedIn(): boolean {
-    console.log(moment().isBefore(this.getExpiration()));
+    //console.log(moment().isBefore(this.getExpiration()));
     
     return moment().isBefore(this.getExpiration());
   }

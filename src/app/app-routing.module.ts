@@ -5,6 +5,8 @@ import { LoginComponent } from './main/pages/authentication/login/login.componen
 import { MenuPrincipalComponent } from './main/pages/menuprincipal/menuprincipal.component';
 import { AuthGuard } from './core/guards/auth.guard'
 import { RegistroUsuariosComponent } from './main/pages/registro-usuarios/registro-usuarios.component';
+import { RegistroMaestrosComponent } from './main/pages/registro-maestros/registro-maestros.component';
+import { RegistroAlumnosComponent } from './main/pages/registro-alumnos/registro-alumnos.component';
 
 
 const appRoutes: Routes = [
@@ -13,6 +15,8 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'menuprincipal', component: MenuPrincipalComponent, canActivate: [AuthGuard]},
   { path: 'registrousuarios', component: RegistroUsuariosComponent, canActivate: [AuthGuard]},
+  { path: 'registromaestros', component: RegistroMaestrosComponent, canActivate: [AuthGuard]},
+  { path: 'registroalumnos', component: RegistroAlumnosComponent, canActivate: [AuthGuard]},
   { path: '**', component: LoginComponent },
 ];
 

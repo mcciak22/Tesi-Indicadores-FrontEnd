@@ -21,7 +21,7 @@ export class FileUploadComponent implements ControlValueAccessor {
 
   data: [][];
   data1 = [];
-  data2 = [];
+  displayColums = [];
   
   Filas = [];
   rows = [];
@@ -32,11 +32,15 @@ export class FileUploadComponent implements ControlValueAccessor {
   result2: any[];
   public file: File | null = null;
  
+  @Input() visiblecolumns: number;
+  @Input() visiblecolumnshead: number;
 
   @HostListener('change', ['$event.target.files']) emitFiles( event: FileList ) {
     const file = event && event.item(0);
     //this.onChange(file);
-    this.file = file;   
+    this.file = file;
+    //console.log(this.visiblecolumns);
+       
     
   }
   
@@ -78,26 +82,34 @@ export class FileUploadComponent implements ControlValueAccessor {
       //console.log(ws);
 
       this.data = (XLSX.utils.sheet_to_json(ws, { header: 1 }));
-      //console.log(this.data);        
+      // pueden venir vacios los arreglos entonces hacemos el refactor de las columnas
+      console.log(this.data);        
       // let x = this.data.slice(0);
       // console.log(this.data1);
-      for (let index = 0; index < 3; index++) {
+      //obtenemos las columnas en los nombres
+      for (let index = this.visiblecolumnshead; index <= this.visiblecolumnshead; index++) {
         const element = this.data[index];
         if (element.length !== 0) {
 
-          this.data2.push(element)
+          this.displayColums.push(element)
         }
       }
+       console.log(this.displayColums);
+      
 
-      for (let index = 3; index < this.data.length; index++) {
+      for (let index = this.visiblecolumns; index < this.data.length; index++) {
         const element = this.data[index];
         if (element.length !== 0) {
 
           this.data1.push(element)
         }
       }
+      console.log(this.data1);
+      
     };
     reader.readAsBinaryString(target.files[0]);
+// console.log(this.data1);
+// console.log(this.data2);
 
   }
   CalculoSumaGenerica() {
@@ -168,7 +180,7 @@ export class FileUploadComponent implements ControlValueAccessor {
      //console.log(element2);
      
    }
-   console.log(this.Filas);
+   //console.log(this.Filas);
    
    
   // this.valuesgenerics.forEach(element=>{

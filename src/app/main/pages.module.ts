@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { RegistroUsuariosComponent } from './pages/registro-usuarios/registro-usuarios.component';
 import { RegistroMaestrosComponent } from './pages/registro-maestros/registro-maestros.component';
 import { RegistroAlumnosComponent } from './pages/registro-alumnos/registro-alumnos.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -48,8 +49,16 @@ import { RegistroAlumnosComponent } from './pages/registro-alumnos/registro-alum
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
+    RouterModule,
     UtilsModule,
   ],
-  exports: [MenuPrincipalComponent, LoginComponent, ForgotpasswordComponent],
+  exports: [
+    MenuPrincipalComponent,
+    LoginComponent,
+    ForgotpasswordComponent,
+    RegistroUsuariosComponent,
+    RegistroMaestrosComponent,
+    RegistroAlumnosComponent,
+  ],
 })
 export class PagesModule {}

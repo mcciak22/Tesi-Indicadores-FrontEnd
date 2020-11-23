@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NameService } from 'src/app/core/services/servicio-cambionombre/name.service';
 
 @Component({
   selector: 'registromaestros',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro-maestros.component.scss']
 })
 export class RegistroMaestrosComponent implements OnInit {
-
-  constructor() { }
+  titulopagina: string = 'Registro de Maestros';
+  constructor(
+    private titulo:NameService
+  ) {
+    this.titulo.titulopagina = this.titulopagina;
+   }
 
   ngOnInit(): void {
   }
-
 }
