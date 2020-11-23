@@ -7,4 +7,4 @@
   
 </div>
 <!-- esta configuracion es para registro de usuarios y registro de maestros y alumnos -->
-<app-file-upload [visiblecolumns]="1" [visiblecolumnshead]="1"></app-file-upload>
+<app-file-upload (arreglodeUsuarios)="Escuchar($event)" [visiblecolumns]="1" [visiblecolumnshead]="1" [Simple]="true"></app-file-upload>

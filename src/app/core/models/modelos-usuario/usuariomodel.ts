@@ -6,6 +6,7 @@ export interface Usuario {
     Rol: string;
     Foto: string;
     Carrera: string;
+    Constraseña?: string;
     Fecha_de_Creacion: string;
     Fecha_de_Actualizacion: string;
 }

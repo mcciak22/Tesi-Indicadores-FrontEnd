@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import * as XLSX from 'xlsx';
 
@@ -34,6 +34,10 @@ export class FileUploadComponent implements ControlValueAccessor {
  
   @Input() visiblecolumns: number;
   @Input() visiblecolumnshead: number;
+  @Input() Simple: boolean;
+
+
+  @Output() arreglodeUsuarios = new EventEmitter();
 
   @HostListener('change', ['$event.target.files']) emitFiles( event: FileList ) {
     const file = event && event.item(0);
@@ -78,39 +82,62 @@ export class FileUploadComponent implements ControlValueAccessor {
       const wsname: string = wb.SheetNames[0];
 
       const ws: XLSX.WorkSheet = wb.Sheets[wsname];
+      
 
       //console.log(ws);
+      if (this.Simple === true) {
+        this.data = (XLSX.utils.sheet_to_json(ws, { raw: true}));
+         //console.log(this.displayColums);
+        
+  
+        for (let index = this.visiblecolumns+1; index < this.data.length; index++) {
+          const element = this.data[index];
+          if (element.length !== 0) {
+  
+            this.data1.push(element)
+          }
+        }
+        
+      } else {
+        
+        this.data = (XLSX.utils.sheet_to_json(ws, { header: 1 }));
+        for (let index = this.visiblecolumnshead; index <= this.visiblecolumnshead; index++) {
+          const element = this.data[index];
+          if (element.length !== 0) {
+  
+            this.displayColums.push(element)
+          }
+        }
+         //console.log(this.displayColums);
+        
+  
+        for (let index = this.visiblecolumns; index < this.data.length; index++) {
+          const element = this.data[index];
+          if (element.length !== 0) {
+  
+            this.data1.push(element)
+          }
+        }
+      }
 
-      this.data = (XLSX.utils.sheet_to_json(ws, { header: 1 }));
       // pueden venir vacios los arreglos entonces hacemos el refactor de las columnas
       console.log(this.data);        
       // let x = this.data.slice(0);
       // console.log(this.data1);
       //obtenemos las columnas en los nombres
-      for (let index = this.visiblecolumnshead; index <= this.visiblecolumnshead; index++) {
-        const element = this.data[index];
-        if (element.length !== 0) {
-
-          this.displayColums.push(element)
-        }
-      }
-       console.log(this.displayColums);
-      
-
-      for (let index = this.visiblecolumns; index < this.data.length; index++) {
-        const element = this.data[index];
-        if (element.length !== 0) {
-
-          this.data1.push(element)
-        }
-      }
-      console.log(this.data1);
+     
+      this.Emitirevento(this.data1)
+      //console.log(this.data1);
       
     };
     reader.readAsBinaryString(target.files[0]);
 // console.log(this.data1);
 // console.log(this.data2);
 
+  }
+
+  Emitirevento(arreglo) {
+    this.arreglodeUsuarios.emit(arreglo);
   }
   CalculoSumaGenerica() {
     // console.log(this.Filas);
