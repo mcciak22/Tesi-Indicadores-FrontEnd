@@ -4,6 +4,7 @@ import { from } from 'rxjs';
 import { LoginComponent } from './main/pages/authentication/login/login.component';
 import { MenuPrincipalComponent } from './main/pages/menuprincipal/menuprincipal.component';
 import { AuthGuard } from './core/guards/auth.guard'
+import { RegistroUsuariosComponent } from './main/pages/registro-usuarios/registro-usuarios.component';
 
 
 const appRoutes: Routes = [
@@ -11,6 +12,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'menuprincipal', component: MenuPrincipalComponent, canActivate: [AuthGuard]},
+  { path: 'registrousuarios', component: RegistroUsuariosComponent, canActivate: [AuthGuard]},
   { path: '**', component: LoginComponent },
 ];
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-registro-maestros',
+  selector: 'registromaestros',
   templateUrl: './registro-maestros.component.html',
   styleUrls: ['./registro-maestros.component.scss']
 })
