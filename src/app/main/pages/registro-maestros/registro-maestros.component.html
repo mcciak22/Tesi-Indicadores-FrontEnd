@@ -1,7 +1,10 @@
 <div style="width: 100%" class="final">
   
+    <button mat-button matTooltip="Download PDF">
+        <a download="Formato Carga de Maestros.xlsx" href="assets/formatos/Formato Carga de Maestros.xlsx">Descargar Formato Para Registro de Maestros</a></button>
+
     <button mat-button [routerLink]="['/menuprincipal']">Regresar</button>
-  
 </div>
+
 <!-- esta configuracion es para registro de usuarios y registro de maestros y alumnos -->
 <app-file-upload [visiblecolumns]="1" [visiblecolumnshead]="1"></app-file-upload>
