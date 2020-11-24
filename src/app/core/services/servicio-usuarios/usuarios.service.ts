@@ -28,7 +28,7 @@ export class UsuariosService {
   }
   EliminarUsuario(id: number): Observable<any>{
 
-    return this.http.delete<any>(this.appParametersService.ApiServicesUrl + id);
+    return this.http.delete<any>(this.appParametersService.ApiServicesUrl + 'api/usuarios/'+ id);
   }
   ActualizarrUsuario(id: number, usuario: Usuario): Observable<any>{
 

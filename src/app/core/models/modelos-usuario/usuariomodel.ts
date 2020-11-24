@@ -1,12 +1,12 @@
 export interface Usuario {
-    id_uduario: number;
+    id_usuario?: number;
     Nombre: string;
     Apellidos: string;
     Email: string;
     Rol: string;
-    Foto: string;
+    Foto?: string;
     Carrera: string;
-    Constraseña?: string;
-    Fecha_de_Creacion: string;
-    Fecha_de_Actualizacion: string;
+    Contraseña?: string;
+    Fecha_de_Creacion?: string;
+    Fecha_de_Actualizacion?: string;
 }

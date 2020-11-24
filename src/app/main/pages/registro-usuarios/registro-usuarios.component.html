@@ -1,10 +1,110 @@
-<div style="width: 100%" class="final">
-  
-    <button mat-button matTooltip="Download PDF">
-        <a download="Formato Carga de Usuarios.xlsx" href="assets/formatos/Formato Carga de Usuarios.xlsx">Descargar Formato Para Registro de Usuarios</a></button>
+<div class="final">
+  <button mat-button matTooltip="Download PDF">
+    <a
+      download="Formato Carga de Usuarios.xlsx"
+      href="assets/formatos/Formato Carga de Usuarios.xlsx"
+      >Descargar Formato Para Registro de Usuarios</a
+    >
+  </button>
 
-    <button mat-button [routerLink]="['/menuprincipal']">Regresar</button>
-  
+  <button mat-button [routerLink]="['/menuprincipal']">Regresar</button>
 </div>
+
+<div><button mat-button (click)="EliminarRegistros()">Eliminar todos</button></div>
 <!-- esta configuracion es para registro de usuarios y registro de maestros y alumnos -->
-<app-file-upload (arreglodeUsuarios)="Escuchar($event)" [visiblecolumns]="1" [visiblecolumnshead]="1" [Simple]="true"></app-file-upload>
+<app-file-upload
+  (arreglodeUsuarios)="Escuchar($event)"
+  [visiblecolumns]="1"
+  [visiblecolumnshead]="1"
+  [Simple]="true"
+></app-file-upload>
+
+<div class="contenedortabla">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- Checkbox Column -->
+    <ng-container matColumnDef="select">
+      <th mat-header-cell *matHeaderCellDef>
+        <button *ngIf="visible === true" mat-button (click)="SeleccionarTodo()">
+          Seleccionar Todo
+        </button>
+        <button
+          *ngIf="visible === false"
+          mat-button
+          (click)="DesleccionarTodo()">
+          Deseleccionar Todo
+        </button>
+      </th>
+      <td mat-cell *matCellDef="let row">
+    
+        <mat-checkbox 
+        (change)="$event ? AgregarFilas(row.id_usuario) : QuitarFilas(row.id_usuario)"
+        [checked] = "checked"
+        >
+        
+        </mat-checkbox>
+        
+      </td>
+    </ng-container>
+
+    <!-- Position Column -->
+    <!-- <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef> No. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id_usuario}} </td>
+        </ng-container> -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="Nombre">
+      <th mat-header-cell *matHeaderCellDef>Nombre</th>
+      <td mat-cell *matCellDef="let element">{{ element.Nombre }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="Apellidos">
+      <th mat-header-cell *matHeaderCellDef>Apellidos</th>
+      <td mat-cell *matCellDef="let element">{{ element.Apellidos }}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="Email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.Email }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Rol">
+      <th mat-header-cell *matHeaderCellDef>Rol</th>
+      <td mat-cell *matCellDef="let element">{{ element.Rol }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Carrera">
+      <th mat-header-cell *matHeaderCellDef>Carrera</th>
+      <td mat-cell *matCellDef="let element">{{ element.Carrera }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr
+      mat-row
+      *matRowDef="let row; columns: displayedColumns"
+      (click)="selection.toggle(row)"
+    ></tr>
+  </table>
+</div>
+<!-- <table>          
+    <tbody>
+        <tr *ngFor="let row of data1">
+                           
+            
+            
+            <td *ngFor="let cell of row">
+                {{cell}}
+                
+           
+            </td>
+            <mat-checkbox (change)="$event.checked ? agregar(row) : quitar(row)"
+                [checked]="checked">
+            </mat-checkbox>
+               
+
+        </tr>
+      
+    </tbody>
+</table> -->

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { LoginComponent } from './pages/authentication/login/login.component';
 import { ForgotpasswordComponent } from './pages/authentication/forgotpassword/forgotpassword.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,12 +16,12 @@ import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UtilsModule } from '../utils/utils.module';
 import { MenuPrincipalComponent } from './pages/menuprincipal/menuprincipal.component';
-import { utils } from 'protractor';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { RegistroUsuariosComponent } from './pages/registro-usuarios/registro-usuarios.component';
 import { RegistroMaestrosComponent } from './pages/registro-maestros/registro-maestros.component';
 import { RegistroAlumnosComponent } from './pages/registro-alumnos/registro-alumnos.component';
 import { RouterModule } from '@angular/router';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -49,6 +48,7 @@ import { RouterModule } from '@angular/router';
     FontAwesomeModule,
     MatCardModule,
     FlexLayoutModule,
+    MatTableModule,
     RouterModule,
     UtilsModule,
   ],
