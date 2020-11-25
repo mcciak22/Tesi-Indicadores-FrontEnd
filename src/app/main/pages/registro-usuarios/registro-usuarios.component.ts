@@ -113,7 +113,11 @@ export class RegistroUsuariosComponent implements OnInit {
         }
       )
     });
-    location.reload();
+   // location.reload();
+   setTimeout(() => {
+      
+    location.reload()
+  }, 2000);
 
   }
 
@@ -142,6 +146,10 @@ export class RegistroUsuariosComponent implements OnInit {
         }
         );
     });
-    location.reload()
+    
+    setTimeout(() => {
+      
+      location.reload()
+    }, 2000);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NameService } from 'src/app/core/services/servicio-cambionombre/name.service';
 import { UsuariosService } from '../../../core/services/servicio-usuarios/usuarios.service';
+import { AutenticacionService } from '../../../core/services/autenticacion/autenticacion.service';
 export interface Tile {
   color: string;
   cols: number;
@@ -24,7 +25,8 @@ export class MenuPrincipalComponent implements OnInit {
   ];
   constructor(
     public nameService: NameService,
-    private usuarioService: UsuariosService
+    private usuarioService: UsuariosService,
+    private authservice: AutenticacionService
   ) {
     this.nameService.titulopagina = this.titulopagina;
     
@@ -35,5 +37,9 @@ export class MenuPrincipalComponent implements OnInit {
     this.usuarioService.ObtenerTodosLosUsuarios().subscribe((data: any) => {
      // console.log(data);
     });
+  }
+  logout(){
+    this.authservice.logout();
+
   }
 }
