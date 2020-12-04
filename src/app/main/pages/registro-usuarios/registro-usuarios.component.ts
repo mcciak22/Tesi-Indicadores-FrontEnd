@@ -24,7 +24,7 @@ export class RegistroUsuariosComponent implements OnInit {
     'Carrera',
   ];
 
-  titulopagina: string = 'Registro de Usuarios';
+  titulopagina = 'Registro de Usuarios';
   arregloUsuarios = [];
   ArregloRegistro: any[];
   UsuariosAdd: Usuario[];
@@ -45,38 +45,34 @@ export class RegistroUsuariosComponent implements OnInit {
   ngOnInit(): void {
     this.ObtenerTodosLosUsuarios();
   }
-  ObtenerTodosLosUsuarios() {
+  ObtenerTodosLosUsuarios(): void {
     this.usuariosService
       .ObtenerTodosLosUsuarios()
       .subscribe((usuarios: UsuariosModel) => {
         this.Usuarios = usuarios.usuarios;
         console.log(usuarios);
-        
+
         this.dataSource = new MatTableDataSource<Usuario>(this.Usuarios);
         this.selection = new SelectionModel<Usuario>(true);
       });
   }
   SeleccionarTodo(): void {
-    //console.log(this.Usuarios);
-   // console.log(this.Filas);
- 
     if (this.checked === false) {
       this.checked = true;
       this.visible = false;
-      for (const i in this.Usuarios) {
-        const obj = this.Usuarios[i].id_usuario;
-        const id = obj;
-        if (this.Ids.length <= this.Usuarios.length) {
-          this.Ids.push(id);
+      for (const key in this.Usuarios) {
+        if (Object.prototype.hasOwnProperty.call(this.Usuarios, key)) {
+          const element = this.Usuarios[key].id_usuario;
+          const id = element;
+          if (this.Ids.length <= this.Usuarios.length) {
+            this.Ids.push(id);
+          }
         }
       }
     }
   }
-  
-  DesleccionarTodo() {
-    //console.log(this.Usuarios);
-    console.log(this.Ids);
 
+  DesleccionarTodo(): void {
     if (this.checked === true) {
       this.checked = false;
       this.visible = true;
@@ -85,11 +81,7 @@ export class RegistroUsuariosComponent implements OnInit {
   }
 
   AgregarFilas(ids: string): any {
-    console.log(ids);
-    
-   this.Ids.push(ids);
-   console.log(this.Ids);
-
+    this.Ids.push(ids);
     if (this.Ids.length >= 0) {
     }
     return {
@@ -97,31 +89,20 @@ export class RegistroUsuariosComponent implements OnInit {
     };
   }
   QuitarFilas(ids: any): void {
-    
-    
     this.Ids = this.Ids.filter((s) => s !== ids);
-    console.log(this.Ids);
-
   }
-  EliminarRegistros(){
-    this.Ids.forEach(element => {
-      
-      this.usuariosService.EliminarUsuario(element).subscribe(
-        (result:any)=>{
-          console.log(result);
-          
-        }
-      )
+  EliminarRegistros(): void {
+    this.Ids.forEach((element) => {
+      this.usuariosService.EliminarUsuario(element).subscribe((result: any) => {
+      });
     });
-   // location.reload();
-   setTimeout(() => {
-      
-    location.reload()
-  }, 2000);
-
+    location.reload();
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
   }
 
-  Escuchar(event) {
+  Escuchar(event): void {
     this.arregloUsuarios = event;
     this.arregloUsuarios.forEach((element) => {
       delete element.No;
@@ -129,27 +110,19 @@ export class RegistroUsuariosComponent implements OnInit {
 
     this.UsuariosAdd = this.arregloUsuarios;
 
-    //console.log(this.UsuariosAdd);
-
     this.UsuariosAdd.forEach((elemento) => {
-      //console.log(elemento);
-
-      this.usuariosService
-        .InsertarUsuario(elemento)
-        .subscribe(
-          (resultado: any) => {
+      this.usuariosService.InsertarUsuario(elemento).subscribe(
+        (resultado: any) => {
           console.log(resultado);
         },
-        (error: any)=>{
-         // console.log(error);
-
+        (error: any) => {
+          // console.log(error);
         }
-        );
+      );
     });
-    
+
     setTimeout(() => {
-      
-      location.reload()
+      location.reload();
     }, 2000);
   }
 }

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NameService } from 'src/app/core/services/servicio-cambionombre/name.service';
 import { UsuariosService } from '../../../core/services/servicio-usuarios/usuarios.service';
 import { AutenticacionService } from '../../../core/services/autenticacion/autenticacion.service';
+import { UsuarioLocal } from 'src/app/core/models/modelos-usuario/usuariolocalmodel';
 export interface Tile {
   color: string;
   cols: number;
@@ -17,29 +18,22 @@ export interface Tile {
 export class MenuPrincipalComponent implements OnInit {
   @Output() EmitirEvento: EventEmitter<any> = new EventEmitter();
   titulopagina = 'Menu Principal';
-  tiles: Tile[] = [
-    {text: 'One', cols: 3, rows: 1, color: 'lightblue'},
-    {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'},
-    {text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-    {text: 'Four', cols: 2, rows: 1, color: '#DDBDF1'},
-  ];
+  usuarioLocal: UsuarioLocal;
   constructor(
     public nameService: NameService,
     private usuarioService: UsuariosService,
     private authservice: AutenticacionService
   ) {
-    this.nameService.titulopagina = this.titulopagina;
-    
-
+    this.usuarioLocal = JSON.parse(localStorage.getItem('Usuario'));
+    this.nameService.titulopagina = this.titulopagina + ' ' + this.usuarioLocal.Rol;
   }
   ngOnInit(): void {
-    //location.reload()
+    // location.reload()
     this.usuarioService.ObtenerTodosLosUsuarios().subscribe((data: any) => {
-     // console.log(data);
+      // console.log(data);
     });
   }
-  logout(){
+  logout(): void {
     this.authservice.logout();
-
   }
 }

@@ -1,6 +1,7 @@
-  mat-grid-tile {
-    background: #e1f9e3;
-  }
+  // mat-grid-tile {
+  //   background: #adf8b5;
+  //   //background: red;
+  // }
 .maxcontent{
   width: 100%;
   height: 100%;
@@ -26,5 +27,15 @@ h1{
 
 .content1 > mat-card { 
   max-width: 609px;; 
+}
+
+.final{
+ 
+  width: 100%;
+  text-align: end;
+  //align-items: end;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  
 }
 
