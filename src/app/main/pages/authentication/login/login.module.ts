@@ -14,19 +14,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { UtilsModule } from 'src/app/utils/utils.module';
-import { HttpClientModule } from '@angular/common/http/index';
 import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    LoginComponent,
-    MatDialogComponent
-  ],
+  declarations: [LoginComponent, MatDialogComponent],
   imports: [
     CommonModule,
     BrowserModule,
-    BrowserAnimationsModule,   
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
@@ -35,13 +31,12 @@ import { MatDialogComponent } from './mat-dialog/mat-dialog.component';
     MatCheckboxModule,
     MatToolbarModule,
     MatRippleModule,
-    FontAwesomeModule,   
+    FontAwesomeModule,
+    MatCardModule,
     FlexLayoutModule,
     HttpClientModule,
-    UtilsModule
+    UtilsModule,
   ],
-  entryComponents:[
-    MatDialogComponent
-  ]
+  entryComponents: [MatDialogComponent],
 })
-export class LoginModule { }
+export class LoginModule {}
