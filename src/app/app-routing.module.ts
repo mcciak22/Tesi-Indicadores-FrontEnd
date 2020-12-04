@@ -7,6 +7,8 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { RegistroUsuariosComponent } from './main/pages/administrador/registro-usuarios/registro-usuarios.component';
 import { RegistroMaestrosComponent } from './main/pages/administrador/registro-maestros/registro-maestros.component';
 import { RegistroAlumnosComponent } from './main/pages/administrador/registro-alumnos/registro-alumnos.component';
+import { CargasarchivosComponent } from './main/pages/usuario/cargasarchivos/cargasarchivos.component';
+import { DescargasComponent } from './main/pages/usuario/descargas/descargas.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -30,6 +32,16 @@ const appRoutes: Routes = [
   {
     path: 'registroalumnos',
     component: RegistroAlumnosComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'app-cargasarchivos',
+    component: CargasarchivosComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'app-descargas',
+    component: DescargasComponent,
     canActivate: [AuthGuard],
   },
   { path: '**', component: LoginComponent },
