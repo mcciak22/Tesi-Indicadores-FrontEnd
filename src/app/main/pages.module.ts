@@ -17,9 +17,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { UtilsModule } from '../utils/utils.module';
 import { MenuPrincipalComponent } from './pages/menuprincipal/menuprincipal.component';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { RegistroUsuariosComponent } from './pages/registro-usuarios/registro-usuarios.component';
-import { RegistroMaestrosComponent } from './pages/registro-maestros/registro-maestros.component';
-import { RegistroAlumnosComponent } from './pages/registro-alumnos/registro-alumnos.component';
+import { RegistroUsuariosComponent } from './pages/administrador/registro-usuarios/registro-usuarios.component';
+import { RegistroMaestrosComponent } from './pages/administrador/registro-maestros/registro-maestros.component';
+import { RegistroAlumnosComponent } from './pages/administrador/registro-alumnos/registro-alumnos.component';
 import { RouterModule } from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
 

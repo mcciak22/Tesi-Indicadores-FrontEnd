@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NameService } from '../../../core/services/servicio-cambionombre/name.service';
-import { UsuariosService } from '../../../core/services/servicio-usuarios/usuarios.service';
-import { Usuario } from '../../../core/models/modelos-usuario/usuariomodel';
 import { MatTableDataSource } from '@angular/material/table';
 import { SelectionModel } from '@angular/cdk/collections';
-import {
-  UsuarioModel,
-  UsuariosModel,
-} from '../../../core/models/modelos-usuario/usuariosmodel';
+import { UsuariosModel } from 'src/app/core/models/modelos-usuario/usuariosmodel';
+import { Usuario } from 'src/app/core/models/modelos-usuario/usuariomodel';
+import { UsuariosService } from 'src/app/core/services/servicio-usuarios/usuarios.service';
+import { NameService } from 'src/app/core/services/servicio-cambionombre/name.service';
 
 @Component({
   selector: 'registrousuarios',
@@ -93,8 +90,9 @@ export class RegistroUsuariosComponent implements OnInit {
   }
   EliminarRegistros(): void {
     this.Ids.forEach((element) => {
-      this.usuariosService.EliminarUsuario(element).subscribe((result: any) => {
-      });
+      this.usuariosService
+        .EliminarUsuario(element)
+        .subscribe((result: any) => {});
     });
     location.reload();
     setTimeout(() => {

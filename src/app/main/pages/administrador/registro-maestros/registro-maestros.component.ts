@@ -4,16 +4,13 @@ import { NameService } from 'src/app/core/services/servicio-cambionombre/name.se
 @Component({
   selector: 'registromaestros',
   templateUrl: './registro-maestros.component.html',
-  styleUrls: ['./registro-maestros.component.scss']
+  styleUrls: ['./registro-maestros.component.scss'],
 })
 export class RegistroMaestrosComponent implements OnInit {
-  titulopagina: string = 'Registro de Maestros';
-  constructor(
-    private titulo:NameService
-  ) {
+  titulopagina= 'Registro de Maestros';
+  constructor(private titulo: NameService) {
     this.titulo.titulopagina = this.titulopagina;
-   }
-
-  ngOnInit(): void {
   }
+
+  ngOnInit(): void {}
 }
