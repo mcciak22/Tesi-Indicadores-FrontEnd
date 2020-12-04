@@ -22,6 +22,8 @@ import { RegistroMaestrosComponent } from './pages/administrador/registro-maestr
 import { RegistroAlumnosComponent } from './pages/administrador/registro-alumnos/registro-alumnos.component';
 import { RouterModule } from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
+import { DescargasComponent } from './pages/usuario/descargas/descargas.component';
+import { CargasarchivosComponent } from './pages/usuario/cargasarchivos/cargasarchivos.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import {MatTableModule} from '@angular/material/table';
     RegistroUsuariosComponent,
     RegistroMaestrosComponent,
     RegistroAlumnosComponent,
+    DescargasComponent,
+    CargasarchivosComponent,
   ],
   imports: [
     CommonModule,
