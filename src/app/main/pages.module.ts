@@ -24,6 +24,7 @@ import { RouterModule } from '@angular/router';
 import {MatTableModule} from '@angular/material/table';
 import { DescargasComponent } from './pages/usuario/descargas/descargas.component';
 import { CargasarchivosComponent } from './pages/usuario/cargasarchivos/cargasarchivos.component';
+import { CargaCicloGeneracionalComponent } from './pages/administrador/carga-ciclo-generacional/carga-ciclo-generacional.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CargasarchivosComponent } from './pages/usuario/cargasarchivos/cargasar
     RegistroAlumnosComponent,
     DescargasComponent,
     CargasarchivosComponent,
+    CargaCicloGeneracionalComponent,
   ],
   imports: [
     CommonModule,

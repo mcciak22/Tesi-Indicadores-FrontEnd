@@ -9,6 +9,7 @@ import { RegistroMaestrosComponent } from './main/pages/administrador/registro-m
 import { RegistroAlumnosComponent } from './main/pages/administrador/registro-alumnos/registro-alumnos.component';
 import { CargasarchivosComponent } from './main/pages/usuario/cargasarchivos/cargasarchivos.component';
 import { DescargasComponent } from './main/pages/usuario/descargas/descargas.component';
+import { CargaCicloGeneracionalComponent } from './main/pages/administrador/carga-ciclo-generacional/carga-ciclo-generacional.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -35,13 +36,18 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'app-cargasarchivos',
+    path: 'cargasarchivos',
     component: CargasarchivosComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'app-descargas',
+    path: 'descargas',
     component: DescargasComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'cargaciclogeneracional',
+    component: CargaCicloGeneracionalComponent,
     canActivate: [AuthGuard],
   },
   { path: '**', component: LoginComponent },
