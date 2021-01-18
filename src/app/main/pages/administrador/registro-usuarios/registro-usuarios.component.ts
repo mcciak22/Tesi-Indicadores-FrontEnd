@@ -19,6 +19,7 @@ export class RegistroUsuariosComponent implements OnInit {
     'Email',
     'Rol',
     'Carrera',
+    'Editar'
   ];
 
   titulopagina = 'Registro de Usuarios';
@@ -27,7 +28,8 @@ export class RegistroUsuariosComponent implements OnInit {
   UsuariosAdd: Usuario[];
   Columnas: any[];
   Usuarios: Usuario[];
-  dataSource: MatTableDataSource<Usuario>;
+  dataSourceadmin: MatTableDataSource<Usuario>;
+  dataSourceuser: MatTableDataSource<Usuario>;
   selection: SelectionModel<Usuario>;
   visible = true;
   Ids = [];
@@ -46,10 +48,15 @@ export class RegistroUsuariosComponent implements OnInit {
     this.usuariosService
       .ObtenerTodosLosUsuarios()
       .subscribe((usuarios: UsuariosModel) => {
+       const Administradores = usuarios.usuarios.filter(d => d.Rol === 'Administrador');
+      //console.log(Administradores);
+       
+       const Usuarios = usuarios.usuarios.filter(d => d.Rol === 'Usuario');
         this.Usuarios = usuarios.usuarios;
-        console.log(usuarios);
+        //console.log(usuarios);
 
-        this.dataSource = new MatTableDataSource<Usuario>(this.Usuarios);
+        this.dataSourceadmin = new MatTableDataSource<Usuario>(Administradores);
+        this.dataSourceuser = new MatTableDataSource<Usuario>(Usuarios);
         this.selection = new SelectionModel<Usuario>(true);
       });
   }

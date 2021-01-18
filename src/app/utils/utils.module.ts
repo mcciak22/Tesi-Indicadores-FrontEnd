@@ -16,6 +16,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatCardModule } from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormUsersComponent } from './components/form-users/form-users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FileUploadComponent,
     FooterComponent,
     ToolbarComponent,
+    FormUsersComponent,
   ],
   imports: [
     CommonModule,

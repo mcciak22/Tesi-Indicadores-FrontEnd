@@ -17,6 +17,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "xlsx"
+            ],
             "outputPath": "dist/Tesi-Indicadores",
             "index": "src/index.html",
             "main": "src/main.ts",
