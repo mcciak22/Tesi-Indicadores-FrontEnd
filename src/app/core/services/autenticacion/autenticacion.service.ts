@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import * as moment from 'moment';
 import jwt_decode from 'jwt-decode';
-import { Usuario } from '../../models/modelos-usuario/usuariomodel';
 import { UsuarioSession } from '../../models/modelos-usuario/usuarioSessionmodel';
 
 
@@ -21,14 +20,14 @@ interface Token{
 export class AutenticacionService {
   sessioUser: UsuarioSession
   constructor(
-    private http: HttpClient,
+    private httpclient: HttpClient,
     private appParametersService: AppParametersService
   ) {}
    Autenticacion(login: Login): Observable<Token> {
      const header = this.appParametersService.vHeadersRequest;
      //console.log(login);
      
-      return this.http.post<Token>(this.appParametersService.ApiServicesUrl + 'api/auth',
+      return this.httpclient.post<Token>(this.appParametersService.ApiServicesUrl + 'api/auth',
         login,
         {headers: header}       
       );
