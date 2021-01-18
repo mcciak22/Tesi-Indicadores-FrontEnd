@@ -19,7 +19,8 @@ export class RegistroUsuariosComponent implements OnInit {
     'Email',
     'Rol',
     'Carrera',
-    'Editar'
+    'Editar',
+    'Eliminar'
   ];
 
   titulopagina = 'Registro de Usuarios';
@@ -52,7 +53,7 @@ export class RegistroUsuariosComponent implements OnInit {
       //console.log(Administradores);
        
        const Usuarios = usuarios.usuarios.filter(d => d.Rol === 'Usuario');
-        this.Usuarios = usuarios.usuarios;
+        //this.Usuarios = usuarios.usuarios;
         //console.log(usuarios);
 
         this.dataSourceadmin = new MatTableDataSource<Usuario>(Administradores);
